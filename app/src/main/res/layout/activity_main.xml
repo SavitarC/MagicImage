@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="150dp"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity"
+    android:orientation="vertical"
+    android:background="@mipmap/SlideMenu"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="功能菜单"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:textColor="@color/colorAccent"
+        >
+    </TextView>
+    <Button
+        android:id="@+id/btn_coloring"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图像色彩调整"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"
+        android:background="@drawable/btn_style"
+        />
+    <Button
+        android:id="@+id/btn_sharpening"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="高级图像处理"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:background="@drawable/btn_style"
+
+
+        />
+    <Button
+        android:id="@+id/btn_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图像滤镜"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:background="@drawable/btn_style"
+
+
+        />
+    <Button
+        android:id="@+id/btn_sing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图像压缩"
+        android:textSize="20sp"
+        android:background="@drawable/btn_style"
+        android:layout_marginTop="20dp"
+        />
+    <Button
+        android:id="@+id/btn_multiple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多选图片压缩"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        />
+
+</LinearLayout>
