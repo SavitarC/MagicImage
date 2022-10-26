@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
 
-    defaultConfig {
+    /*defaultConfig {
         def versions = rootProject.ext.android
         compileSdkVersion versions.compileSdkVersion
         minSdkVersion versions.minSdkVersion
@@ -11,7 +11,7 @@ android {
         versionName versions.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildToolsVersion versions.buildToolsVersion
-    }
+    }*/
   /*  buildTypes {
         release {
             minifyEnabled false
@@ -20,7 +20,7 @@ android {
     }*/
 }
 
-dependencies {
+/*dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     def versions = rootProject.ext.dependencies
     implementation versions.appcompatV7
@@ -30,4 +30,4 @@ dependencies {
   //  implementation versions.rxjava
    // implementation versions.rxandroid
  //   implementation versions.rxlifecycleComponents
-}
+}*/

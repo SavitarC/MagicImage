@@ -5,24 +5,17 @@ android {
         abortOnError false
     }*/
 
-    aaptOptions {
-                 cruncherEnabled = false
-                 useNewCruncher = false
 
-        }
-
-
-
-      /*  signingConfigs {
-        release {
-            keyAlias 'key'
-            keyPassword '123456'
-            storeFile file('D:/AndroidWork/ImageCompress/key.jks')
-            storePassword '123456'
-        }
-    }*/
-    defaultConfig {
-        def versions = rootProject.ext.android
+    /*  signingConfigs {
+      release {
+          keyAlias 'key'
+          keyPassword '123456'
+          storeFile file('D:/AndroidWork/ImageCompress/key.jks')
+          storePassword '123456'
+      }
+  }*/
+    /*defaultConfig {
+        //def versions = rootProject.ext.android
         compileSdkVersion versions.compileSdkVersion
         applicationId "com.imagecompress"
         minSdkVersion versions.minSdkVersion
@@ -32,7 +25,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildToolsVersion versions.buildToolsVersion
         resConfigs "zh"
-    }
+    }*/
     buildTypes {
         release {
           //  signingConfig signingConfigs.release
@@ -60,7 +53,7 @@ android {
     }
 }
 
-dependencies {
+/*dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     def versions = rootProject.ext.dependencies
     //noinspection GradleCompatible
@@ -81,7 +74,7 @@ dependencies {
     debugImplementation versions.leakcanarySupportFragment
     implementation versions.supportV4
     implementation versions.rxlifecycleComponents
-}
+}*/
 allprojects {
     repositories {
         jcenter()
