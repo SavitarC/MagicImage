@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="160dp"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity"
+    android:background="@mipmap/bg2"
+    >
+    <TextView
+        android:id="@+id/text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" 功能菜单"
+        android:textSize="25sp"
+        android:gravity="left"
+        android:textColor="#55343F"
+        android:padding="10dp"
+        android:background="@drawable/btn_style2"
+
+        >
+    </TextView>
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="125dp"
+        android:src="@mipmap/menu3"
+        ></ImageView>
+
+    <Button
+        android:id="@+id/btn_coloring"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="  图像色彩调整"
+
+        android:layout_marginTop="90dp"
+        android:textSize="18sp"
+        android:background="@drawable/btn_style2"
+        android:gravity="left"
+        android:padding="5dp"
+
+        />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="220dp"
+        android:layout_marginLeft="125dp"
+        android:src="@mipmap/color1"
+        ></ImageView>
+    <Button
+        android:id="@+id/btn_sharpening"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  高级图像处理"
+        android:layout_marginTop="160dp"
+
+        android:textSize="18sp"
+        android:background="@drawable/btn_style2"
+
+        android:gravity="left"
+        android:padding="5dp"
+        />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="365dp"
+        android:layout_marginLeft="125dp"
+        android:src="@mipmap/tuxiangchuli1"
+        ></ImageView>
+    <Button
+        android:id="@+id/btn_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图  像  滤  镜"
+        android:layout_marginTop="225dp"
+        android:textSize="19sp"
+        android:gravity="left"
+        android:padding="15dp"
+        android:background="@drawable/btn_style2"
+
+        />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="505dp"
+        android:layout_marginLeft="125dp"
+        android:src="@mipmap/lvjing2"
+        ></ImageView>
+    <Button
+        android:id="@+id/btn_sing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="图  像  压  缩"
+        android:textSize="19sp"
+        android:layout_marginTop="300dp"
+        android:gravity="left"
+        android:padding="15dp"
+        android:background="@drawable/btn_style2"
+
+        />
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="660dp"
+        android:layout_marginLeft="125dp"
+        android:src="@mipmap/compress1"
+        ></ImageView>
+    <Button
+        android:id="@+id/btn_multiple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="多选图片压缩"
+        android:layout_marginTop="10dp"
+        android:visibility="invisible"
+        android:gravity="left"
+        android:padding="5dp"
+        />
+
+</RelativeLayout>
