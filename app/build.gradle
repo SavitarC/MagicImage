@@ -5,22 +5,15 @@ android {
         abortOnError false
     }*/
 
-    aaptOptions {
-                 cruncherEnabled = false
-                 useNewCruncher = false
 
-        }
-
-
-
-      /*  signingConfigs {
-        release {
-            keyAlias 'key'
-            keyPassword '123456'
-            storeFile file('D:/AndroidWork/ImageCompress/key.jks')
-            storePassword '123456'
-        }
-    }*/
+    /*  signingConfigs {
+      release {
+          keyAlias 'key'
+          keyPassword '123456'
+          storeFile file('D:/AndroidWork/ImageCompress/key.jks')
+          storePassword '123456'
+      }
+  }*/
     defaultConfig {
         def versions = rootProject.ext.android
         compileSdkVersion versions.compileSdkVersion
@@ -31,7 +24,7 @@ android {
         versionName versions.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildToolsVersion versions.buildToolsVersion
-        resConfigs "zh"
+        resConfigs 'zh'
     }
     buildTypes {
         release {
