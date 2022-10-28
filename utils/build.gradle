@@ -7,17 +7,16 @@ android {
         compileSdkVersion versions.compileSdkVersion
         minSdkVersion versions.minSdkVersion
         targetSdkVersion versions.targetSdkVersion
-        versionCode versions.versionCode
-        versionName versions.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         buildToolsVersion versions.buildToolsVersion
     }
-  /*  buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }*/
+    namespace 'com.imagecompress.utils'
+    /*  buildTypes {
+          release {
+              minifyEnabled false
+              proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+          }
+      }*/
 }
 
 dependencies {
