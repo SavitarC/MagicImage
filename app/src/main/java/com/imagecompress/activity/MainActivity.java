@@ -13,6 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import com.hitomi.cmlibrary.CircleMenu;
 import com.hitomi.cmlibrary.OnMenuSelectedListener;
 import com.imagecompress.R;
+import com.imagecompress.dialog.ExitDialog;
 
 public class MainActivity extends AppCompatActivity {
 //    private ExitDialog mExitDialog;
@@ -58,43 +59,7 @@ public class MainActivity extends AppCompatActivity {
 //        }, Manifest.permission.WRITE_EXTERNAL_STORAGE);
 //    }
 //
-//    @Override
-//    protected void initEvent() {
-//        findViewById(R.id.btn_sing).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this,SingChoiceImageActivity.class));
-//            }
-//        });
-//
-//        findViewById(R.id.btn_sharpening).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this,SharpeningActivity.class));
-//            }
-//        });
-//
-//        findViewById(R.id.btn_multiple).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this,MultipleChoiceImageActivity.class));
-//            }
-//        });
-//
-//        findViewById(R.id.btn_coloring).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this,ChangeColorActivity.class));
-//            }
-//        });
-//
-//        findViewById(R.id.btn_filter).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this,FilterActivity.class));
-//            }
-//        });
-//    }
+
 //    @Override
 //    public void onBackPressed() {
 //        if (mExitDialog == null) {
