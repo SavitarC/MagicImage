@@ -22,7 +22,7 @@
         <View
             android:id="@+id/second_line"
             android:layout_width="20dp"
-            android:layout_height="120dp"
+            android:layout_height="180dp"
             android:background="@drawable/opencolor2"
 
             android:layout_centerHorizontal="true"
@@ -43,7 +43,7 @@
         <View
             android:id="@+id/fourth_line"
             android:layout_width="20dp"
-            android:layout_height="180dp"
+            android:layout_height="290dp"
             android:background="@drawable/opencolor4"
 
             android:layout_centerHorizontal="true"
@@ -65,7 +65,7 @@
         <View
             android:id="@+id/sixth_line"
             android:layout_width="20dp"
-            android:layout_height="240dp"
+            android:layout_height="180dp"
             android:background="@drawable/opencolor6"
 
             android:layout_centerHorizontal="true"
@@ -86,7 +86,7 @@
             android:layout_height="120dp"
             app:cardCornerRadius="60dp"
             app:cardElevation="10dp"
-            android:layout_marginLeft="140dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="30dp"
             app:cardPreventCornerOverlap="true">
 
@@ -104,7 +104,7 @@
             android:layout_height="wrap_content"
             android:text="Welcome"
             android:textColor="@color/colorFFE1E1E1"
-            android:layout_marginLeft="140dp"
+            android:layout_marginLeft="135dp"
             android:layout_marginTop="150dp"
             android:textSize="30sp"
             ></TextView>

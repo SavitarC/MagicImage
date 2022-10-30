@@ -38,6 +38,7 @@ public class SharpeningActivity extends BaseActivity {
     private TextView mRawText, mSharpeningText;
     private View mChooseView, mSharpeningView, mEdgeHighlightView, mSmoothView, mGaussSmoothView;
     private File mImageFile;
+
     // private boolean mIsSharpening;
 
     private int mClickPosition;

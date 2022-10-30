@@ -21,7 +21,7 @@
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_alignParentRight="true"
-            android:src="@drawable/user" />
+            android:src="@drawable/photo" />
 
     </RelativeLayout>
 
@@ -89,7 +89,7 @@
             android:layout_height="150dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:background="@drawable/empty"
+            android:background="#11000000"
             android:transitionName="@string/preview" />
 
         <ImageView
@@ -97,7 +97,7 @@
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_weight="1"
-            android:background="@drawable/empty2"
+            android:background="#11000000"
             android:transitionName="@string/preview" />
     </LinearLayout>
     <LinearLayout
@@ -148,7 +148,7 @@
                     android:id="@+id/sharpening_btn"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/sharpen" />
+                    android:background="@drawable/card_bg1" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -166,7 +166,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="150dp"
             android:layout_height="120dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
             android:background="#ffff"
@@ -185,7 +185,7 @@
                     android:id="@+id/edge_highlight_btn"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="@drawable/overstate" />
+                    android:background="@drawable/card_bg2" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -229,9 +229,9 @@
                     android:id="@+id/smoothing_btn"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:background="@drawable/smooth" />
+                    android:background="@drawable/card_bg1" />
 
-                <TextView
+                <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -247,7 +247,7 @@
         <androidx.cardview.widget.CardView
             android:layout_width="150dp"
             android:layout_height="120dp"
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="20dp"
             android:background="#ffff"
@@ -266,7 +266,7 @@
                     android:id="@+id/gauss_smooth_btn"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="@drawable/compress" />
+                    android:background="@drawable/card_bg2" />
 
                 <TextView
                     android:layout_width="wrap_content"
