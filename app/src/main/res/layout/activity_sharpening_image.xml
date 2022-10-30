@@ -89,7 +89,7 @@
             android:layout_height="150dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
-            android:background="#11000000"
+            android:background="@drawable/empty"
             android:transitionName="@string/preview" />
 
         <ImageView
@@ -97,7 +97,7 @@
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_weight="1"
-            android:background="#11000000"
+            android:background="@drawable/empty2"
             android:transitionName="@string/preview" />
     </LinearLayout>
     <LinearLayout
