@@ -24,15 +24,13 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.URI;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
 //https://blog.csdn.net/cfy137000/article/details/54646912
 
 public class ChangeColorActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
     private ImageView mChangeColorIv;
-    private SeekBar mHueSeekBar, mSaturationSeekBar, mLumSeekBar;
+    private SeekProgressBar mHueSeekBar, mSaturationSeekBar, mLumSeekBar;
     private Button mChooseButton, mSaveButton;
 
     private Bitmap mBitmap = null;
@@ -46,9 +44,9 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekBar.On
         setContentView(R.layout.activity_change_color);
 
         mChangeColorIv = (ImageView) findViewById(R.id.change_color_iv);
-        mHueSeekBar = (SeekBar) findViewById(R.id.hue_seek_bar);
-        mSaturationSeekBar = (SeekBar) findViewById(R.id.saturation_seek_bar);
-        mLumSeekBar = (SeekBar) findViewById(R.id.lum_seek_bar);
+        mHueSeekBar = (SeekProgressBar)findViewById(R.id.hue_seek_bar);
+        mSaturationSeekBar = (SeekProgressBar)findViewById(R.id.saturation_seek_bar);
+        mLumSeekBar = (SeekProgressBar)findViewById(R.id.lum_seek_bar);
         mChooseButton = (Button) findViewById(R.id.choose_btn);
         mChooseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,7 +99,7 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekBar.On
         mHueSeekBar.setOnSeekBarChangeListener(this);
         mSaturationSeekBar.setOnSeekBarChangeListener(this);
         mLumSeekBar.setOnSeekBarChangeListener(this);
-
+        //SeekProgressBar.setProgress(mHueSeekBar);
     }
 
     @Override

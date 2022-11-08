@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                             case 1:
                                 Toast.makeText(MainActivity.this, "图像压缩", Toast.LENGTH_SHORT).show();
                                 constraintLayout.setBackgroundColor(Color.parseColor("#96F7D2"));
-                                startActivity(new Intent(MainActivity.this,MultipleChoiceImageActivity.class));
+                                startActivity(new Intent(MainActivity.this,SingChoiceImageActivity.class));
                                 break;
                             case 2:
                                 Toast.makeText(MainActivity.this, "滤镜", Toast.LENGTH_SHORT).show();

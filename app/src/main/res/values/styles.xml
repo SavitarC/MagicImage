@@ -41,4 +41,13 @@
         <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/colorFFEFEFEF</item>
     </style>
+
+    <!--自定义控件属性-->
+    <declare-styleable name="MyGradient">
+        <attr name="GradientcolorStart" format="reference" />
+        <attr name="GradientcolorEnd" format="reference" />
+        <attr name="GradientcolorafterStart" format="reference" />
+        <attr name="GradientcolorbeforeEnd" format="reference" />
+        <attr name="Gradientround" format="dimension" />
+    </declare-styleable>
 </resources>

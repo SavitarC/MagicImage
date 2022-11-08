@@ -88,13 +88,6 @@
             android:layout_marginBottom="12dp"
             app:srcCompat="@drawable/user" />
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp" />
-
 
     </LinearLayout>
 
@@ -128,7 +121,7 @@
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/call_button"
+        android:background="@drawable/button"
         android:drawablePadding="8dp"
         android:layout_marginLeft="5dp"
         android:paddingLeft="16dp"
