@@ -49,20 +49,19 @@
                 android:id="@+id/choose_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="which image you want to edit."
-                android:textSize="16dp"
                 android:textColor="#979696"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"/>
+                android:textSize="16dp" />
 
             <Button
                 android:id="@+id/choose_btn"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="@drawable/photo"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"/>
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/photo" />
 
         </RelativeLayout>
 
@@ -266,14 +265,14 @@
                     android:id="@+id/gauss_smooth_btn"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:background="@drawable/compress" />
+                    android:background="@drawable/guess" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="图像压缩"
+                    android:text="高斯模糊"
                     android:textColor="#5E5E5E"
                     android:textStyle="bold" />
 
