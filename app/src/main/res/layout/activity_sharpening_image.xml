@@ -31,20 +31,19 @@
                 android:id="@+id/text_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
                 android:text="which image you want to edit."
-                android:textSize="16dp"
                 android:textColor="#979696"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"/>
+                android:textSize="16dp" />
 
             <Button
                 android:id="@+id/choose_btn"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="@drawable/photo"
-                android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"/>
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/photo" />
 
         </RelativeLayout>
 
