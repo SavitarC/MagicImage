@@ -18,7 +18,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/Theme.Design.Light.NoActionBar">
         <activity android:name=".activity.OpenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,11 +39,13 @@
         </provider>
 
         <activity android:name=".activity.SingChoiceImageActivity" />
-        <activity android:name=".activity.MultipleChoiceImageActivity"/>
+
         <activity android:name=".activity.SharpeningActivity"/>
         <activity android:name=".activity.ChangeColorActivity"/>
         <activity android:name=".activity.FilterActivity"/>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.SeekProgressBar"/>
+        <activity android:name=".activity.MainActivity"
+            android:exported="true">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
 

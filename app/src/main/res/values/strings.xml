@@ -6,4 +6,5 @@
     <string name="cancel">取消</string>
     <string name="exit_app_content">您确定退出APP？</string>
     <string name="exit_is_delete_file">删除压缩文件</string>
+    <string name="recovery"><u>重置</u></string>
 </resources>

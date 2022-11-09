@@ -60,7 +60,7 @@ dependencies {
     //noinspection GradleCompatible
     implementation versions.appcompatV7
     implementation versions.constraint
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.constraintlayout:constraintlayout:1.4.0'
     testImplementation versions.junit
     androidTestImplementation versions.runner
     androidTestImplementation versions.espresso
