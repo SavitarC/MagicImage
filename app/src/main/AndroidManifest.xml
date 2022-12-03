@@ -39,18 +39,12 @@
         </provider>
 
         <activity android:name=".activity.SingChoiceImageActivity" />
-
         <activity android:name=".activity.SharpeningActivity"/>
         <activity android:name=".activity.ChangeColorActivity"/>
         <activity android:name=".activity.FilterActivity"/>
         <activity android:name=".activity.SeekProgressBar"/>
         <activity android:name=".activity.MainActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
 
     </application>

@@ -38,14 +38,12 @@ public class SeekProgressBar extends View {
     private float mStartTouchX;
     private String mProgressMaxText = "200";//绘制的文字的最大值（用于确定显示进度的矩形的宽高）
 
-    private SeekBar.OnSeekBarChangeListener mOnSeekBarChangeListener;
-
     public SeekProgressBar(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public SeekProgressBar(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public SeekProgressBar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -89,17 +87,18 @@ public class SeekProgressBar extends View {
         int s = MeasureSpec.getSize(size);
         if (mode == MeasureSpec.EXACTLY) {
             return s;
-        } else{
+        } else {
             return Math.min(s, 200);
         }
     }
+
     //计算高度
     private int measureSizeHeight(int size) {
         int mode = MeasureSpec.getMode(size);
         int s = MeasureSpec.getSize(size);
         if (mode == MeasureSpec.EXACTLY) {
             return s;
-        }else {
+        } else {
             //自适应模式，返回所需的最小高度
             return (int) (mTextSize + mProgressStrMarginV * 2);
         }
@@ -109,26 +108,26 @@ public class SeekProgressBar extends View {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
         //进度条绘制在控件中央,宽度为控件宽度(mProgressHeight/2是为了显示出左右两边的圆角)
-        mPathProgressBg.moveTo(mProgressHeight / 2,h / 2f);
-        mPathProgressBg.lineTo(w - mProgressHeight / 2,h / 2f);
+        mPathProgressBg.moveTo(mProgressHeight / 2, h / 2f);
+        mPathProgressBg.lineTo(w - mProgressHeight / 2, h / 2f);
         //将进度条路径设置给PathMeasure
-        mPathMeasure.setPath(mPathProgressBg,false);
+        mPathMeasure.setPath(mPathProgressBg, false);
         invalidate();
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()){
+        switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 //判断手指是否触摸了显示进度的圆角矩形块，这样才可以拖拽
-                if(mProgressRoundRectF != null && mProgressRoundRectF.contains(event.getX(),event.getY())){
+                if (mProgressRoundRectF != null && mProgressRoundRectF.contains(event.getX(), event.getY())) {
                     //记录手指刚接触屏幕的X轴坐标（因为只需要在X轴上平移）
                     mStartTouchX = event.getX();
                     mIsTouchSeek = true;
                 }
                 break;
             case MotionEvent.ACTION_MOVE:
-                if(mIsTouchSeek){
+                if (mIsTouchSeek) {
                     //计算横向移动的距离
                     float moveX = event.getX() - mStartTouchX;
                     //计算出当前进度的X轴所显示的进度长度
@@ -136,9 +135,9 @@ public class SeekProgressBar extends View {
                     //计算滑动后的X轴的坐标
                     float showProgressWidth = currentProgressWidth + moveX;
                     //计算边界值
-                    if(showProgressWidth < 0){
+                    if (showProgressWidth < 0) {
                         showProgressWidth = 0;
-                    }else if(showProgressWidth > mPathMeasure.getLength()){
+                    } else if (showProgressWidth > mPathMeasure.getLength()) {
                         showProgressWidth = mPathMeasure.getLength();
                     }
                     //计算滑动后的进度
@@ -159,7 +158,7 @@ public class SeekProgressBar extends View {
     /**
      * 设置进度
      */
-    public void setProgress(float progress){
+    public void setProgress(float progress) {
         this.mProgress = progress;
         invalidate();
     }
@@ -176,25 +175,25 @@ public class SeekProgressBar extends View {
     }
 
     private void drawProgressText(Canvas canvas) {
-        String progressText = String.valueOf((int)Math.floor(200 * mProgress-100));
+        String progressText = String.valueOf((int) Math.floor(200 * mProgress - 100));
         //让文字垂直居中的偏移
         int offsetY = (mFontMetricsInt.bottom - mFontMetricsInt.ascent) / 2 - mFontMetricsInt.bottom;
         //将文字绘制在矩形的中央
-        canvas.drawText(progressText,mProgressRoundRectF.centerX(),mProgressRoundRectF.centerY() + offsetY,mPaintProgressText);
+        canvas.drawText(progressText, mProgressRoundRectF.centerX(), mProgressRoundRectF.centerY() + offsetY, mPaintProgressText);
     }
 
     private void drawShowProgressRoundRect(Canvas canvas) {
         float stop = mPathMeasure.getLength() * mProgress;//计算进度条的进度
         //根据要绘制的文字的最大长宽来计算要绘制的圆角矩形的长宽
         Rect rect = new Rect();
-        mPaintProgressText.getTextBounds(mProgressMaxText,0, mProgressMaxText.length(),rect);
+        mPaintProgressText.getTextBounds(mProgressMaxText, 0, mProgressMaxText.length(), rect);
         //要绘制矩形的宽、高
         float rectWidth = rect.width() + (mProgressStrMarginH * 2);
         float rectHeight = rect.height() + (mProgressStrMarginV * 2);
         //计算边界值（为了不让矩形在左右两边超出边界）
-        if(stop < rectWidth / 2f){
+        if (stop < rectWidth / 2f) {
             stop = rectWidth / 2f;
-        }else if(stop > (getWidth() - rectWidth / 2f)){
+        } else if (stop > (getWidth() - rectWidth / 2f)) {
             stop = getWidth() - rectWidth / 2f;
         }
         //定义绘制的矩形
@@ -202,9 +201,9 @@ public class SeekProgressBar extends View {
         float right = stop + rectWidth / 2f;
         float top = getHeight() / 2f - rectHeight / 2f;
         float bottom = getHeight() / 2f + rectHeight / 2f;
-        mProgressRoundRectF = new RectF(left,top,right,bottom);
+        mProgressRoundRectF = new RectF(left, top, right, bottom);
         //绘制为圆角矩形
-        canvas.drawRoundRect(mProgressRoundRectF, mRoundRectRadius, mRoundRectRadius,mPaintRoundRect);
+        canvas.drawRoundRect(mProgressRoundRectF, mRoundRectRadius, mRoundRectRadius, mPaintRoundRect);
     }
 
     private void drawProgress(Canvas canvas) {
@@ -215,13 +214,9 @@ public class SeekProgressBar extends View {
         //计算进度条的进度
         float stop = mPathMeasure.getLength() * mProgress;
         //得到与进度对应的路径
-        mPathMeasure.getSegment(0,stop,mPathProgressFg,true);
+        mPathMeasure.getSegment(0, stop, mPathProgressFg, true);
         mPaintProgress.setColor(mColorProgressFg);
         //绘制进度
         canvas.drawPath(mPathProgressFg, mPaintProgress);
-    }
-
-    public void setOnSeekBarChangeListener(SeekBar.OnSeekBarChangeListener l) {
-        mOnSeekBarChangeListener = l;
     }
 }

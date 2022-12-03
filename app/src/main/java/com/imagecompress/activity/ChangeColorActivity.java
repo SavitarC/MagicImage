@@ -26,7 +26,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-//https://blog.csdn.net/cfy137000/article/details/54646912
 
 public class ChangeColorActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
     private ImageView mChangeColorIv;
@@ -43,10 +42,11 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekBar.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_color);
 
+
         mChangeColorIv = (ImageView) findViewById(R.id.change_color_iv);
-        mHueSeekBar = (SeekProgressBar)findViewById(R.id.hue_seek_bar);
-        mSaturationSeekBar = (SeekProgressBar)findViewById(R.id.saturation_seek_bar);
-        mLumSeekBar = (SeekProgressBar)findViewById(R.id.lum_seek_bar);
+        mHueSeekBar = (SeekProgressBar) findViewById(R.id.hue_seek_bar);
+        mSaturationSeekBar = (SeekProgressBar) findViewById(R.id.saturation_seek_bar);
+        mLumSeekBar = (SeekProgressBar) findViewById(R.id.lum_seek_bar);
         mChooseButton = (Button) findViewById(R.id.choose_btn);
         mChooseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,21 +84,21 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekBar.On
                         e.printStackTrace();
                     }
                     mChangeColorIv.setDrawingCacheEnabled(false);
-                }
-                else {
+                } else {
                     Toast.makeText(getApplicationContext(), "请先选择图片", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
 
         //获得图片资源
 //        mBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.ayaki);
 //        mChangeColorIv.setImageBitmap(mBitmap);
 
         //对seekBar设置监听
-        mHueSeekBar.setOnSeekBarChangeListener(this);
-        mSaturationSeekBar.setOnSeekBarChangeListener(this);
-        mLumSeekBar.setOnSeekBarChangeListener(this);
+        //mHueSeekBar.setOnSeekBarChangeListener(this);
+        //mSaturationSeekBar.setOnSeekBarChangeListener(this);
+        //mLumSeekBar.setOnSeekBarChangeListener(this);
         //SeekProgressBar.setProgress(mHueSeekBar);
     }
 
@@ -118,7 +118,12 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekBar.On
     }
 
     @Override
-    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+    public void onProgressChanged(SeekBar seekBar, int progress ,boolean fromUser) {
+
+        mHueSeekBar.setProgress(progress);
+        mSaturationSeekBar.setProgress(progress);
+        mLumSeekBar.setProgress(progress);
+        
         switch (seekBar.getId()) {
             case R.id.hue_seek_bar:
                 //色相的范围是正负180

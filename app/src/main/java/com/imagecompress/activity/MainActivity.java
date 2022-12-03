@@ -85,56 +85,53 @@ public class MainActivity extends AppCompatActivity {
     ConstraintLayout constraintLayout;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         circleMenu = findViewById(R.id.circle_menu);
         constraintLayout = findViewById(R.id.constraint_layout);
 
-        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"), R.mipmap.menu,R.mipmap.cancel)
-                .addSubMenu(Color.parseColor("#88BEF5"),R.mipmap.color)
-                .addSubMenu(Color.parseColor("#83E85A"),R.mipmap.compress)
-                .addSubMenu(Color.parseColor("#FF4B32"),R.mipmap.filter)
-                .addSubMenu(Color.parseColor("#BA53DE"),R.mipmap.process)
-                .addSubMenu(Color.parseColor("#FF8A5C"),R.mipmap.exit)
+        circleMenu.setMainMenu(Color.parseColor("#CDCDCD"), R.mipmap.menu, R.mipmap.cancel)
+                .addSubMenu(Color.parseColor("#88BEF5"), R.mipmap.color)
+                .addSubMenu(Color.parseColor("#83E85A"), R.mipmap.compress)
+                .addSubMenu(Color.parseColor("#FF4B32"), R.mipmap.filter)
+                .addSubMenu(Color.parseColor("#BA53DE"), R.mipmap.process)
+                .addSubMenu(Color.parseColor("#FF8A5C"), R.mipmap.exit)
                 .setOnMenuSelectedListener(new OnMenuSelectedListener() {
-                    @Override
-                    public void onMenuSelected(int index) {
-                        switch (index) {
-                            case 0:
-                                Toast.makeText(MainActivity.this, "色彩调整", Toast.LENGTH_SHORT).show();
-                                constraintLayout.setBackgroundColor(Color.parseColor("#ECFFFB"));
+                                               @Override
+                                               public void onMenuSelected(int index) {
+                                                   switch (index) {
+                                                       case 0:
+                                                           Toast.makeText(MainActivity.this, "色彩调整", Toast.LENGTH_SHORT).show();
+                                                           constraintLayout.setBackgroundColor(Color.parseColor("#ECFFFB"));
+                                                           startActivity(new Intent(MainActivity.this, ChangeColorActivity.class));
+                                                           break;
+                                                       case 1:
+                                                           Toast.makeText(MainActivity.this, "图像压缩", Toast.LENGTH_SHORT).show();
+                                                           constraintLayout.setBackgroundColor(Color.parseColor("#96F7D2"));
+                                                           startActivity(new Intent(MainActivity.this, SingChoiceImageActivity.class));
+                                                           break;
+                                                       case 2:
+                                                           Toast.makeText(MainActivity.this, "滤镜", Toast.LENGTH_SHORT).show();
+                                                           constraintLayout.setBackgroundColor(Color.parseColor("#FAC4A2"));
+                                                           startActivity(new Intent(MainActivity.this, FilterActivity.class));
 
-
-                                startActivity(new Intent(MainActivity.this,ChangeColorActivity.class));
-
-                                break;
-                            case 1:
-                                Toast.makeText(MainActivity.this, "图像压缩", Toast.LENGTH_SHORT).show();
-                                constraintLayout.setBackgroundColor(Color.parseColor("#96F7D2"));
-                                startActivity(new Intent(MainActivity.this,SingChoiceImageActivity.class));
-                                break;
-                            case 2:
-                                Toast.makeText(MainActivity.this, "滤镜", Toast.LENGTH_SHORT).show();
-                                constraintLayout.setBackgroundColor(Color.parseColor("#FAC4A2"));
-                                startActivity(new Intent(MainActivity.this,FilterActivity.class));
-
-                                break;
-                            case 3:
-                                Toast.makeText(MainActivity.this, "图像处理", Toast.LENGTH_SHORT).show();
-                                constraintLayout.setBackgroundColor(Color.parseColor("#D3CDE6"));
-                                startActivity(new Intent(MainActivity.this,SharpeningActivity.class));
-                                break;
-                            case 4:
-                                Toast.makeText(MainActivity.this, "退出", Toast.LENGTH_SHORT).show();
-                                constraintLayout.setBackgroundColor(Color.parseColor("#FFF591"));
-                                finish();
-                                System.exit(0);
-                                break;
-                            }
-                    }
-                    }
+                                                           break;
+                                                       case 3:
+                                                           Toast.makeText(MainActivity.this, "图像处理", Toast.LENGTH_SHORT).show();
+                                                           constraintLayout.setBackgroundColor(Color.parseColor("#D3CDE6"));
+                                                           startActivity(new Intent(MainActivity.this, SharpeningActivity.class));
+                                                           break;
+                                                       case 4:
+                                                           Toast.makeText(MainActivity.this, "退出", Toast.LENGTH_SHORT).show();
+                                                           constraintLayout.setBackgroundColor(Color.parseColor("#FFF591"));
+                                                           finish();
+                                                           System.exit(0);
+                                                           break;
+                                                   }
+                                               }
+                                           }
                 );
 
     }
