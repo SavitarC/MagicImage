@@ -108,14 +108,4 @@
         android:text="保存图片" />
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/text_botton1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:autoLink="all"
-        android:text="@string/recovery"/>
 </LinearLayout>

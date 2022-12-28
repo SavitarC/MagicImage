@@ -115,10 +115,23 @@ public class SeekProgressBar extends View {
         invalidate();
     }
 
+    public interface OnSeekBarChangeListener {
+        void onProgressChanged(int id);
+    }
+
+    private OnSeekBarChangeListener listener;
+
+    public void setOnSeekBarChangeListener(OnSeekBarChangeListener listener) {
+        this.listener = listener;
+    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                if (listener != null) {
+                    listener.onProgressChanged(getId());
+                }
                 //判断手指是否触摸了显示进度的圆角矩形块，这样才可以拖拽
                 if (mProgressRoundRectF != null && mProgressRoundRectF.contains(event.getX(), event.getY())) {
                     //记录手指刚接触屏幕的X轴坐标（因为只需要在X轴上平移）
@@ -161,6 +174,13 @@ public class SeekProgressBar extends View {
     public void setProgress(float progress) {
         this.mProgress = progress;
         invalidate();
+    }
+
+    /**
+     * 返回进度
+     */
+    public float getProgress(){
+        return mProgress;
     }
 
     @Override

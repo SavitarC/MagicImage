@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -27,7 +28,10 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ChangeColorActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
+public class ChangeColorActivity extends AppCompatActivity implements SeekProgressBar.OnSeekBarChangeListener {
+
+    private static final String TAG = "MainActivity";
+
     private ImageView mChangeColorIv;
     private SeekProgressBar mHueSeekBar, mSaturationSeekBar, mLumSeekBar;
     private Button mChooseButton, mSaveButton;
@@ -45,8 +49,11 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekBar.On
 
         mChangeColorIv = (ImageView) findViewById(R.id.change_color_iv);
         mHueSeekBar = (SeekProgressBar) findViewById(R.id.hue_seek_bar);
+        mHueSeekBar.setOnSeekBarChangeListener(this);
         mSaturationSeekBar = (SeekProgressBar) findViewById(R.id.saturation_seek_bar);
+        mSaturationSeekBar.setOnSeekBarChangeListener(this);
         mLumSeekBar = (SeekProgressBar) findViewById(R.id.lum_seek_bar);
+        mSaturationSeekBar.setOnSeekBarChangeListener(this);
         mChooseButton = (Button) findViewById(R.id.choose_btn);
         mChooseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,41 +125,36 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekBar.On
     }
 
     @Override
-    public void onProgressChanged(SeekBar seekBar, int progress ,boolean fromUser) {
+    public void onProgressChanged(int id) {
 
-        mHueSeekBar.setProgress(progress);
-        mSaturationSeekBar.setProgress(progress);
-        mLumSeekBar.setProgress(progress);
-        
-        switch (seekBar.getId()) {
+        switch (id) {
             case R.id.hue_seek_bar:
                 //色相的范围是正负180
-                mHue = (progress - MID_VALUE) * 1f / MID_VALUE * 180;
+                mHue = 360*mHueSeekBar.getProgress()-180;
+                Log.d(TAG, "onTouchEvent mHueSeekBar:" + mHueSeekBar.getProgress());
+                Log.d(TAG, "onTouchEvent mHue:" + mHue);
                 break;
             case R.id.saturation_seek_bar:
                 //范围是0-2;
-                mSaturation = progress * 1f / MID_VALUE;
+                mSaturation = 2*mSaturationSeekBar.getProgress();
+                Log.d(TAG, "onTouchEvent mSaturationSeekBar:" + mSaturationSeekBar.getProgress());
+                Log.d(TAG, "onTouchEvent mSaturation:" + mSaturation);
                 break;
             case R.id.lum_seek_bar:
-                mLum = progress * 1f / MID_VALUE;
+                mLum = mLumSeekBar.getProgress();
+                Log.d(TAG, "onTouchEvent mLumSeekBar:" + mLumSeekBar.getProgress());
+                Log.d(TAG, "onTouchEvent mLum:" + mLum);
                 break;
+        }
+
+        if (mBitmap == null) {
+            Toast.makeText(getApplicationContext(), "请先选择图片", Toast.LENGTH_SHORT).show();
         }
 
         if (mBitmap != null) {
             Bitmap bitmap = ImageHelper.getChangedBitmap(mBitmap, mHue, mSaturation, mLum);
             mChangeColorIv.setImageBitmap(bitmap);
         }
-    }
-
-    @Override
-    public void onStartTrackingTouch(SeekBar seekBar) {
-        if (mBitmap == null) {
-            Toast.makeText(getApplicationContext(), "请先选择图片", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-    @Override
-    public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
 }
