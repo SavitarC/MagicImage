@@ -53,7 +53,7 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekProgre
         mSaturationSeekBar = (SeekProgressBar) findViewById(R.id.saturation_seek_bar);
         mSaturationSeekBar.setOnSeekBarChangeListener(this);
         mLumSeekBar = (SeekProgressBar) findViewById(R.id.lum_seek_bar);
-        mSaturationSeekBar.setOnSeekBarChangeListener(this);
+        mLumSeekBar.setOnSeekBarChangeListener(this);
         mChooseButton = (Button) findViewById(R.id.choose_btn);
         mChooseButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,7 +141,7 @@ public class ChangeColorActivity extends AppCompatActivity implements SeekProgre
                 Log.d(TAG, "onTouchEvent mSaturation:" + mSaturation);
                 break;
             case R.id.lum_seek_bar:
-                mLum = mLumSeekBar.getProgress();
+                mLum = 2*mLumSeekBar.getProgress();
                 Log.d(TAG, "onTouchEvent mLumSeekBar:" + mLumSeekBar.getProgress());
                 Log.d(TAG, "onTouchEvent mLum:" + mLum);
                 break;
